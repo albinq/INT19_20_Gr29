@@ -3,12 +3,53 @@ body{background-color: #333333; color: white; margin:10px;}
 a{ text-decoration: none; color: black;}
 
 .search {
-    color: purple;
+	width:260px;
+    
      border-radius: 30px;
     height: 30px;
     position:absolute; top: 30px; right: 30px;
-
+ background-color: grey;
 }
 .middle{
 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+li {
+    float: left;
+    position:relative;
+}
+.link a:link, a:visited {
+    display: block; 
+    width: 290px;
+    border-radius: 3px;
+    border-color: black;
+    font-weight: bold;
+    color: black;
+    background-color: #cecece;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    
+}
+
+.link a:hover, a:active {
+  color:red;}
+
+.divider {
+	color: black;
+    position: absolute;
+    right:-1px;
+    top:19px;
+}
+.link-red a
+{
+color: red;
 }
