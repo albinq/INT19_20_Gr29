@@ -1,14 +1,12 @@
-
 body{background-color: #333333; color: white; margin:10px;}
 a{ text-decoration: none; color: black;}
 
 .search {
 	width:260px;
-    
-     border-radius: 30px;
+    border-radius: 30px;
     height: 30px;
     position:absolute; top: 30px; right: 30px;
- background-color: grey;
+    background-color: grey;
 }
 .middle{
 
@@ -54,8 +52,3 @@ li {
 color: red;
 }
 
-#footer
-{
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	background-color: grey;
-}
