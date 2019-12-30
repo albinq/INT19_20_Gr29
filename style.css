@@ -53,3 +53,9 @@ li {
 {
 color: red;
 }
+
+#footer
+{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	background-color: grey;
+}
