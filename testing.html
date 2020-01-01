@@ -6,9 +6,160 @@
 <style type="text/css">
 	
 	body
-{background-image: url("bg.jpeg");}
-</style>
+{background-image: url("bg.jpeg");
+color: white;
+background-size: auto;
+ background-origin: content-box;}
+ 
+<div class="b"> This div contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</div>
+<address>
+Written by <a href="mailto:Spoxx@example.com">Spoxx</a>.<br> 
+Visit us at:<br>
+Hospital.com<br>
+<br>
+
+</address>
+
+<ul>
+	<li type="circle">CIRCLE</li>
+	<li type="disc">CIRCLE</li>
+	<li type="square">CIRCLE</li>
+</ul>
+
+<ul style="list-style-type:disc;">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
 
 
+
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+
+
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+
+
+<div>
+hello there general kenobi
+</div>
+<div style="border-style:dotted;">
+hello world
+</div>
+
+
+
+
+
+
+
+
+<h2>The outline-style Property</h2>
+
+<p class="dotted">A dotted outline</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+<p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+<p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+<p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+
+
+
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+window.onload = function() {
+    var canvas = document.getElementById("mycCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("scream");
+   ctx.drawImage(img, 10, 10);
+};
+
+
+
+</script>
+
+<p>Image to use:</p>
+
+<img id="scream" width="220" height="277"
+src="bg2.jpg" alt="The Scream">
+
+<p>Canvas:</p>
+
+<canvas id="mycCanvas" width="240" height="297"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
+
+
+
+
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40"
+  stroke="green" stroke-width="4" fill="yellow" />
+Sorry, your browser does not support inline SVG.
+</svg>
+
+<svg width="400" height="100">
+  <rect width="400" height="100" 
+  style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+Sorry, your browser does not support inline SVG.
+</svg>
+ 
+<figure>
+  <img src="bg2.jpg" alt="Trulli" style="width:100%">
+  <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+</figure>
+
+
+<article>
+  <header>
+    <h1>Most important heading here</h1>
+    <h3>Less important heading here</h3>
+    <p>Some additional information here.</p>
+  </header>
+  <p>Lorem Ipsum dolor set amet....</p>
+</article>
+
+<section>
+  <h1>WWF</h1>
+  <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+</section>
+
+<p id="borderimg1">Here, the image tiles to fill the area. The image is rescaled if necessary, to avoid dividing tiles.</p>
 </body>
 </html>
