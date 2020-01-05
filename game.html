@@ -33,11 +33,45 @@ function mouseOver() {
 function myFunction() {
  alert("you win");
 }
+var x = document.getElementById("demo");
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 
+var w;
+
+function startWorker() {
+  if(typeof(Worker) !== "undefined") {
+    if(typeof(w) == "undefined") {
+      w = new Worker("demo_workers.js");
+    }
+    w.onmessage = function(event) {
+      document.getElementById("result").innerHTML = event.data;
+    };
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+  }
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
+}
 
 </script>
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
 <button onclick="myFunction()">Click me</button>
 <style type="text/css">
 	
@@ -49,6 +83,9 @@ function myFunction() {
 	
 		border-radius:50%;background:#09f}
 </style>
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
 
 </body>
 </html>
