@@ -48,25 +48,7 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 
-var w;
 
-function startWorker() {
-  if(typeof(Worker) !== "undefined") {
-    if(typeof(w) == "undefined") {
-      w = new Worker("demo_workers.js");
-    }
-    w.onmessage = function(event) {
-      document.getElementById("result").innerHTML = event.data;
-    };
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
-  }
-}
-
-function stopWorker() { 
-  w.terminate();
-  w = undefined;
-}
 
 </script>
 <button onclick="getLocation()">Try It</button>
@@ -83,9 +65,7 @@ function stopWorker() {
 	
 		border-radius:50%;background:#09f}
 </style>
-<p>Count numbers: <output id="result"></output></p>
-<button onclick="startWorker()">Start Worker</button> 
-<button onclick="stopWorker()">Stop Worker</button>
+
 
 </body>
 </html>
