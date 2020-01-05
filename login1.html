@@ -1,52 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Login form-1</title>
 </head>
-<body>
-<p> we are open it is <time>10:00</time> oclock</p>
+<body style="background-color: lightblue;">
+	<h1 style="text-shadow: 2px 2px #FF0000;">LOGIN</h1>
+	<style type="text/css">
+		
+div.a{
+	width: 50px;
+  height: 30px;
+  background-color: yellow;
+  transform: rotate(20deg);
+}
+div.b{
+	width: 50px;
+  height: 30px;
+  background-color: yellow;
+  transform: scale(1,2);
+}
+div.c{
+	width: 50px;
+  height: 30px;
+  background-color: yellow;
+  transform: skew(20deg,10deg);
+}
+div.d{
+	width: 50px;
+  height: 30px;
+  background-color: yellow;
+  transform:rotateX(60deg);
+}
+div.e{
+	width: 50px;
+  height: 30px;
+  background-color: yellow;
+  transform:rotateY(150deg);
+
+	</style>
+<p>We are open always, it is <time>10:00</time> oclock</p>
 	
-<form >
+<form style="position: absolute; left: 590px; top: 250px;">
   First name:<br>
-  <input type="text" name="firstname" maxlength="10" size="40">
+  <input type="text" name="firstname" maxlength="10" size="20">
   <br>
   Last name:<br>
   <input type="text" name="lastname" >
   <br><br>
+  Age:
+  <input type="number" name="quantity" min="18" max="50"><br><br>
   <input type="submit" value="Submit">
-  <input type="number" name="quantity" min="1" max="5">
+  
+<img src="go.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+
 </form> 
-<figure>
-  <img src="welcome.gif" alt="alt" >
-  <figcaption>Join us</figcaption>
+<figure style="position: absolute; top: 40px; left: 500px;">
+  <img src="welcome.gif" alt="welcome" >
+
 </figure>
-<div style="transform: rotate(20deg); position: fixed; background-color: yellow; ">This div is rotated</div>
+<h3>Transform Rotate</h3>
+<div class="a"></div>
 <br>
+<h3>Transform Scale</h3>
+<div class="b"></div>
 <br>
+<h3>Transform Scew</h3>
+<div class="c"></div>
 <br>
-<div style="background-color: yellow; position: fixed; transform: scale(2,3); ">This div is scale</div>
+<h3>Transform RotateX</h3>
+<div class="d"></div>
 <br>
-<br>
-<br>
-<div style="background-color: yellow; position: fixed;transform: skew(20deg,10deg); ">This div is scale</div>
-<br>
-<br>
-<br>
-<div style="background-color: yellow; position: fixed;transform:rotateX(60deg);  ">This div is scale</div>
-<br>
-<br>
-<br>
-<div style="background-color: yellow; position: fixed;transform:rotateY(150deg);  ">This div is scale</div>
+<h3>Transform RotateY</h3>
+<div class="e"></div>
 <p id="demo"></p>
 
 <script>
-var x = 5;
-var y = 6;
-var z = x + y;
-document.getElementById("demo").innerHTML =
-"The value of z is: " + z;
-
-
 var w;
 
 function startWorker() {

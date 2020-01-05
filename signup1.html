@@ -3,9 +3,7 @@
 <head>
 	<title></title>
 </head>
-<body>
-
-
+<body style="background-color: lightblue;">
 
 <form >
   First name:<br>
@@ -13,11 +11,14 @@
   <br>
   Last name:<br>
   <input type="text" name="lastname" >
+  <br>
+  Password:<br>
+  <input type="Password" name="lastname" >
   <br><br>
 
- <input type="checkbox" name="s1" value="smth1">something 1<br>
-  <input type="checkbox" name="s2" value="smth2"checked> something 2<br>
-  <input type="checkbox" name="s3" value="smth3"> something 3<br><br>
+ <input type="checkbox" name="s1" value="smth1">Service<br>
+  <input type="checkbox" name="s2" value="smth2"checked>Visiting<br>
+  <input type="checkbox" name="s3" value="smth3">Applying<br><br>
 
 
 <label>Gender</label><br>
@@ -34,10 +35,13 @@
     <h1>We have over 50000 accounts</h1>
     <h3>Over 100 doctors</h3>
   </header>
-  <p>Please sign-up to join us &euml; &Euml; &Ccedil; &ccedil;</p>
+  <p>Please sign-up to join us 
+  Ne e mir&euml;presim &ccedil;dok&euml;nd</p>
+  <p>&Euml;ndrro me ne &Ccedil;lirohu </p>
 </article>
 
 <form >
+  Browseri juaj:
   <input list="browsers" name="browser">
   <datalist id="browsers">
     <option value="Internet Explorer">
@@ -46,14 +50,38 @@
     <option value="Opera">
     <option value="Safari">
   </datalist>
-  <input type="submit">
+
 </form>
 
-<form action="/action_page.php" id="numform" oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
-<input type="range" id="a" name="a" value="50">100
-+<input type="number" id="b" name="b" value="50">
-<br><br>
-<input type="submit">
-</form>
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+
+var currentTime = new Date().getHours();
+if (7 <= currentTime && currentTime < 20) {
+    if (document.body) {
+        document.body.background = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/1024px-F1_light_blue_flag.svg.png";
+    }
+}
+else {
+    if (document.body) {
+        document.body.background = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwispi.com%2Fwp-content%2Fuploads%2F2013%2F10%2FLight-Orange1.jpg&f=1&nofb=1";
+    }
+}
+
+
+</script>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
 </body>
 </html>
