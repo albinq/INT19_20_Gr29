@@ -12,7 +12,44 @@
     background-size: auto;
     background-origin: content-box;
 }
+#translate {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform: translate(50px,100px);
+  
+}
 
+div.z {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position :relative;
+
+  animation: mymove 5s infinite;
+}
+.shtylla {
+
+ 
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 1px solid lightblue;
+}
+
+h2 {
+  -webkit-column-span: all;
+  column-span: all;
+}
+
+
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+   from {background-color: red;}
+  to {background-color: yellow;}
+}
  #origin {
   border: 10px double black;
   padding: 25px;
@@ -49,6 +86,14 @@ p.outset {outline-style: outset;}
   -webkit-border-image: url(bg2.jpg) 30 round;
   -o-border-image: url(bg2.jpg) 30 round; 
   border-image: url(bg2.jpg) 30 round;
+}
+#div1, #div2 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 #example1 {
@@ -109,6 +154,7 @@ Hospital.com<br>
   <dt>Milk</dt>
   <dd>- white cold drink</dd>
 </dl>
+
 
 
 
@@ -176,6 +222,21 @@ window.onload = function() {
 };
 
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+
 
 </script>
 
@@ -205,16 +266,49 @@ style="border:5px solid white;">
 
 <svg width="400" height="100">
   <rect width="400" height="100" 
-  style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+  style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0) " />
 </svg>
  
 
 
+<div id="translate">
+This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+</div>
 
 
+<div class="z"></div>
 
+<div class="shtylla">
+<h2>Lorem Ipsum Dolor Sit Amet</h2>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+</div>
 
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="bg2.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div>
 
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+
+</audio>
+
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+
+</audio>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
 </body>
 </html>
