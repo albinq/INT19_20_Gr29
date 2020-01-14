@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../JavaScript/contact.js"></script>
+<body style="background-color: lightblue;">
+	<form style="float: right;" action="mailto:someone@example.com" method="post" enctype="text/plain">
+
+  First name:<br>
+  <input type="text" name="firstname" >
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" >
+  <br><br>
+
+Nickname:<br> 
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail" required><br>
+Comment:<br>
+<input type="text" name="comment" size="30"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+<table border="1px">
+<tr><td><p id="object"></p></td>
+<td><p id="global"></p></td>
+<td><p id="day"></p></td>
+<td><p id="location"></p><button onclick="getLocation()">Get Location</button></td> </tr>
+<tr><td><p id="for"></p></td>
+<td><p id="while"></p></td>
+<td><p id="append">Append</p></td>
+<td><p id="maxvalue"></p>
+<p id="NaN"></p>
+<p id="expo"></p>
+<p id="string"></p><button onclick="manipulim()">Manipulim</button></td></tr>
+<tr><td><p id="sqrt"></p></td>
+<td><p id="pow"></p></td>
+<td><p id="round"></p></td>
+<td><p id="pi"></p></td></tr>
+</table>
+
+
+
+
+
+
+
+<button onclick="match()">match</button>
+<button onclick="replace()">replace</button>
+<button onclick="exec()">exec</button>
+<button onclick="test()">test</button>
+
+
+<p id="mare">The rain in SPAIN stays mainly in the plain</p>
+
+<p><a href="https://www.facebook.com" id="fb">FB</a></p>
+
+<button id="get">Show href Value</button>
+<button id="hide">Hide</button>
+<button id="set">Change href Value</button>
+<button id="add">Add</button>
+<button id="remove">Remove</button>
+<h6>This paragraph will be hidden</h6>
+<script>
+	var text = "";
+var i = 0;
+while (i < 10) {
+  text += "<br>The number is " + i;
+  i++;
+}
+document.getElementById("while").innerHTML = text;
+document.getElementById("day").innerHTML = "Today is " + day;
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i, len, text;
+for (i = 0, len = cars.length, text = ""; i < len; i++) {
+  text += cars[i] + "<br>";
+}
+document.getElementById("for").innerHTML = text;
+document.getElementById("object").innerHTML = person.fullName();
+var globale = "Globale";
+myFunction();
+
+function myFunction() {
+  document.getElementById("global").innerHTML = "I can display " + globale;
+}
+document.getElementById("sqrt").innerHTML = Math.sqrt(64);
+document.getElementById("pow").innerHTML = Math.pow(2,5);
+document.getElementById("round").innerHTML = Math.round(8.2);
+document.getElementById("pi").innerHTML = Math.PI;
+var x = document.getElementById("location");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+<p>Please input a number between 5 and 10:</p>
+
+<input id="error" type="text">
+<button type="button" onclick="errors()">Test Input</button>
+<p id="p01"></p>
+
+
+
+</body>
+</html>

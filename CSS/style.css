@@ -39,7 +39,13 @@ li {
     text-decoration: none;
     
 }
+.shtylla {
 
+ 
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 1px solid lightblue;
+}
 .link a:hover, a:active {
   color:red;}
 

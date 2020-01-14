@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing</title>
+</head>
+<style type="text/css">
+	
+	body
+{
+	background-image: url("../Images/bg.jpeg");
+    color: white;
+    background-size: auto;
+    background-origin: content-box;
+    background-attachment: fixed;
+}
+#translate {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform: translate(50px,100px);
+  
+}
+
+div.z {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position:absolute;
+  left: 450px;
+  animation: mymove 5s infinite;
+}
+
+
+h2 {
+  -webkit-column-span: all;
+  column-span: all;
+}
+
+
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+   from {background-color: red;}
+  to {background-color: yellow;}
+}
+ #origin {
+  width: 200px;
+  border: 10px double black;
+  padding: 25px;
+  background: url(../Images/bg2.jpg);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+
+p {outline-color:white;}
+
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+
+#marginpa {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  
+  border-style:dashed;
+}
+
+
+#borderimg { 
+  width: 200px;
+  border: 10px solid transparent;
+  padding: 15px;
+  -webkit-border-image: url(../Images/bg2.jpg) 30 round;
+  -o-border-image: url(../Images/bg2.jpg) 30 round; 
+  border-image: url(../Images/bg2.jpg) 30 round;
+}
+#div1, #div2 {
+  float: right;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+#grad100 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red, yellow, green); 
+}
+
+
+#grad200 {
+  height: 200px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(red, yellow); /* Standard syntax (must be last) */
+}
+</style>
+<nav style="float: right; width: 200px;">
+
+<h2>The outline-style Property</h2>
+<div style="border-style:dotted;">
+A dotted border
+</div>
+
+<p class="dotted">A dotted outline</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+<p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+<p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+<p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+
+</nav>
+<div class="z"></div>
+<div id="grad200"></div>
+<div id="grad100"></div>
+<div id="origin">
+  <h2>WELCOME</h2> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3; float: right;">
+</canvas>
+<p id="demo"></p>
+<script>
+
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"blue");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+window.onload = function() {
+    var canvas = document.getElementById("mycCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("canvas");
+   ctx.drawImage(img, 10, 10);
+};
+
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+
+
+function myFunction() {
+  alert("I am an alert box!");
+}
+
+
+
+
+</script>
+<p id="borderimg">Hello There</p>
+<img src="../Images/bg2.jpg" id="canvas" style="position: absolute; left: 570px; top: 100px;" >
+<canvas id="mycCanvas" width="240" height="297"
+style="border:5px solid white; position: absolute; left: 570px; top: 300px;">
+</canvas>
+<svg width="100" height="100" style="position: absolute; top: 30px; right: 250px;" >
+  <circle cx="50" cy="50" r="40"
+  stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+<svg width="200" height="100" style="position: absolute; top: 130px; right: 250px;" >
+  <rect width="400" height="100" 
+  style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0) " />
+</svg>
+ 
+
+
+<div id="translate">
+This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+</div>
+
+
+
+
+
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="../Images/bg2.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+
+
+
+</body>
+</html>
